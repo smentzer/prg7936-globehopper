@@ -1,6 +1,20 @@
 import React, { useState, useEffect } from "react";
 import logo from './logo.svg';
 import './App.css';
+import login from './Pages/login';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#3719bf",
+      light: "#441fed",
+      dark: "#2c1596"
+    },
+  }
+});
+
 
 function App() {
   const [testData, setTestData] = useState(null);
@@ -12,25 +26,9 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        {testData ? (
-          <pre>{testData}</pre>
-        ) : null}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+    <login/>
+    </ThemeProvider>
   );
 }
 
