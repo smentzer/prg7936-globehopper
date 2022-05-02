@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
-import logo from './logo.svg';
 import './App.css';
-import login from './Pages/login';
+import LoginPage from './Pages/login';
+import MyAppBar from './Components/Appbar';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#3719bf",
-      light: "#441fed",
-      dark: "#2c1596"
+      main: "#33DBFF",
+      light: "#95ecff",
+      dark: "#004a5a"
     },
   }
 });
@@ -27,7 +26,8 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-    <login/>
+      <MyAppBar/>
+    <LoginPage />
     </ThemeProvider>
   );
 }
